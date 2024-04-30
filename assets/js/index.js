@@ -8,10 +8,10 @@ const todoItems = document.querySelectorAll("li.todo-task");
 
 console.log(todoItems);
 
-todoTask.addEventListener("click", highlightElement);
+console.log(todoTask.firstChild.nextSibling);
 
-function highlightElement(e) {
-    e.preventDefault();
+todoTask.firstChild.nextSibling.textContent = "Go over Budget";
 
-    console.log(e.type);
+for (let i = 0; i < todoItems.length; i++) {
+    console.log(todoItems[i]);
 }
