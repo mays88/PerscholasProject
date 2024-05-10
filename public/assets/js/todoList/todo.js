@@ -60,3 +60,16 @@ function populateTask(postId) {
         taskTitle.textContent = todoTitle;
     }
 }
+
+export async function addTask() {
+    const popup = document.getElementById("myPopup");
+
+    popup.addEventListener("click", createTask);
+    console.log(createTask());
+
+    function createTask() {
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+        console.log("TESTING");
+    }
+}
