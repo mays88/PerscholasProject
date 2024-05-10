@@ -1,4 +1,73 @@
-# SBA - 316 - The Document Object Model
+# Scaling Project - With each section implement new features or concepts that will benefit the end goal, SBA and eventually the capstone. This project will grow larger and more functional.
+
+## Figma Board
+
+https://www.figma.com/design/gd9B2rFFnODgm3ugErgRHz/TBT?node-id=0-1&t=5jvdHxykKDnojQyn-0
+
+<details><summary>SBA 318 - Express Server Application</summary>
+
+## Create and use at least two pieces of custom middleware.
+
+## Create and use error-handling middleware.
+
+## Use at least three different data categories (e.g., users, posts, or comments).
+
+## Utilize reasonable data structuring practices.
+
+## Create GET routes for all data that should be exposed to the client.
+
+## Create POST routes for data, as appropriate. At least one data category should allow for client creation via a POST request.
+
+## Create PATCH or PUT routes for data, as appropriate. At least one data category should allow for client manipulation via a PATCH or PUT request.
+
+## Create DELETE routes for data, as appropriate. At least one data category should allow for client deletion via a DELETE request.
+
+## Include query parameters for data filtering, where appropriate. At least one data category should allow for additional filtering through the use of query parameters. Note: DO NOT use API keys; this makes it more difficult for instructors to grade finished projects efficiently.
+
+## Utilize route parameters, where appropriate.
+
+## Adhere to the guiding principles of REST.
+
+## Create and render at least one view using a view template and template engine. This can be a custom template engine or a third-party engine. If you are stuck on how to approach this, think about ways you could render the current state of your API's data for easy viewing.
+
+## Use simple CSS to style the rendered views. Note: This is not a test of design; it is a test of serving static files using Express. The CSS can be very simple.
+
+## Include a form within a rendered view that allows for interaction with your RESTful API.
+
+## Utilize reasonable code organization practices.
+
+</details>
+
+<details><summary>SBA - 308A - Javascript Web Application</summary>
+
+## Use the fetch API or Axios to communicate with an external web API. Use the data provided by this API to populate your application’s content and features.
+
+todos.js contains a communication with an external API using AXIOS.
+
+## Create user interaction with the API through a search feature, paginated gallery, or similar. This feature should use GET requests to retrieve associated data.
+
+## Enable user manipulation of data within the API through the use of POST, PUT, or PATCH requests. Ensure your chosen API supports this feature before beginning.
+
+(SKIP FOR NOW)
+
+## Make use of Promises and async/await syntax as appropriate.
+
+todos.js contains an async function that awaits the results from the ToDo API.
+
+## Organize your JavaScript code into at least three (3) different module files, and import functions and data across files as necessary.
+
+My current structure includes the main index.js file along with a todo.js file that handles retrieving the list of task. There is also a link to the calendar.js file which will be used to populate the calendar.
+
+## Ensure the program runs as expected, without any undesired behavior caused by misunderstanding of the JavaScript event loop (such as race conditions, API calls being handled out of order, etc.).
+
+## Create an engaging user experience through the use of HTML and CSS.
+
+## Ensure that the program runs without errors (comment out things that do not work, and explain your blockers - you can still receive partial credit).
+
+</details>
+
+<details>
+<summary>SBA - 316 - The Document Object Model</summary>
 
 ## Cache at least one element using selectElementById.
 
@@ -44,28 +113,4 @@ index.js contains cloneNode for fav buttons.
 
 ## Ensure that the program runs without errors (comment out things that do not work, and explain your blockers - you can still receive partial credit).
 
-# SBA - 308A - Javascript Web Application
-
-## Use the fetch API or Axios to communicate with an external web API. Use the data provided by this API to populate your application’s content and features.
-
-todos.js contains a communication with an external API using AXIOS.
-
-## Create user interaction with the API through a search feature, paginated gallery, or similar. This feature should use GET requests to retrieve associated data.
-
-## Enable user manipulation of data within the API through the use of POST, PUT, or PATCH requests. Ensure your chosen API supports this feature before beginning.
-
-(SKIP FOR NOW)
-
-## Make use of Promises and async/await syntax as appropriate.
-
-todos.js contains an async function that awaits the results from the ToDo API.
-
-## Organize your JavaScript code into at least three (3) different module files, and import functions and data across files as necessary.
-
-My current structure includes the main index.js file along with a todo.js file that handles retrieving the list of task. There is also a link to the calendar.js file which will be used to populate the calendar.
-
-## Ensure the program runs as expected, without any undesired behavior caused by misunderstanding of the JavaScript event loop (such as race conditions, API calls being handled out of order, etc.).
-
-## Create an engaging user experience through the use of HTML and CSS.
-
-## Ensure that the program runs without errors (comment out things that do not work, and explain your blockers - you can still receive partial credit).
+</details>
