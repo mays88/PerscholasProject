@@ -84,12 +84,52 @@
             <div class="accent1">
                 <div class="accent2">
                     <section class="main-content">
-                        <!-- <div class="popup"><h2 id="add-task">+</h2></div> -->
-                        <div class="popup">
-                            +
-                            <span class="popuptext" id="myPopup"
-                                >Popup text...</span
+                        <!-- A button to open the popup form -->
+                        <button class="open-button" id="openFormBtn">
+                            + Add Task
+                        </button>
+
+                        <!-- The form -->
+                        <div class="form-popup" id="myForm">
+                            <form
+                                class="form-container"
+                                id="form-body-container"
                             >
+                                <h1>Add Task</h1>
+
+                                <label for="category"><b>Category</b></label>
+                                <input
+                                    type="text"
+                                    placeholder="Enter Category"
+                                    name="category"
+                                    id="category"
+                                    required
+                                />
+
+                                <label for="title"><b>Title</b></label>
+                                <input
+                                    type="text"
+                                    placeholder="Enter Task"
+                                    name="title"
+                                    id="title"
+                                    required
+                                />
+
+                                <button
+                                    type="submit"
+                                    class="btn"
+                                    id="task-submit-button"
+                                >
+                                    Submit
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn cancel"
+                                    id="closeFormBtn"
+                                >
+                                    Close
+                                </button>
+                            </form>
                         </div>
                         <div class="feature-area">
                             <ul id="todo-list" class="todo-lists"></ul>
@@ -104,5 +144,16 @@
                 </div>
             </div>
         </div>
+        <!-- <script>
+            function openForm() {
+                console.log("OPEN");
+                document.getElementById("myForm").style.display = "block";
+            }
+
+            function closeForm() {
+                console.log("CLOSE");
+                document.getElementById("myForm").style.display = "none";
+            }
+        </script> -->
     </body>
 </html>

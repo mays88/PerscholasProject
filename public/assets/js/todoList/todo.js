@@ -61,15 +61,12 @@ function populateTask(postId) {
     }
 }
 
-export async function addTask() {
-    const popup = document.getElementById("myPopup");
+// export async function addTask() {
+//     const addTask = document.getElementById("add-task");
+//     addTask.addEventListener("click", createTask);
+//     console.log(addTask);
 
-    popup.addEventListener("click", createTask);
-    console.log(createTask());
-
-    function createTask() {
-        var popup = document.getElementById("myPopup");
-        popup.classList.toggle("show");
-        console.log("TESTING");
-    }
-}
+//     function createTask() {
+//         console.log("POP UP FOR ADD TASK");
+//     }
+// }

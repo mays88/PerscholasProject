@@ -1,4 +1,4 @@
-import { getTask, addTask } from "./todoList/todo.js";
+import { getTask } from "./todoList/todo.js";
 import { getCalendar } from "./calendar/calendar.js";
 
 const todoTask = document.getElementById("todo-list");
@@ -50,4 +50,21 @@ function createFavButtons(icon) {
 })();
 
 getCalendar();
-addTask();
+
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+}
+
+const openBtn = document.getElementById("openFormBtn");
+const closeBtn = document.getElementById("closeFormBtn");
+
+openBtn.addEventListener("click", () => {
+    openForm();
+});
+closeBtn.addEventListener("click", () => {
+    closeForm();
+});
