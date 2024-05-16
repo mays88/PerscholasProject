@@ -1,27 +1,19 @@
 export async function getTask() {
     try {
         const response = await axios.get(`https://dummyjson.com/todos`);
-        // const postId = postInput.value;
-        // const postTitle = document.querySelector("#postTitle");
-        // const postBody = document.querySelector("#postBody");
 
-        // postTitle.textContent = response.data.title;
-        // postBody.textContent = response.data.body;
-        console.log(response.data);
         populateTask(response.data);
-        // const result = response.data;
-        // console.log(response.data);
+
         return response.data;
     } catch (error) {
         console.error(error);
     }
 }
 
-function populateTask(postId) {
+function populateTask(data) {
     const allTask = document.getElementById("todo-list");
-    const allPost = postId.todos;
+    const allPost = data.todos;
 
-    // console.log(allTask);
     for (let post in allPost) {
         let reqPost = allPost[post];
         let taskLi = document.createElement("li");
@@ -31,7 +23,6 @@ function populateTask(postId) {
         let taskTitle = document.createElement("p");
         let taskSpacer = document.createElement("span");
         let taskDate = document.createElement("p");
-        // let taskDate = new Date();
 
         let todoTitle = reqPost.todo;
 
@@ -62,14 +53,21 @@ function populateTask(postId) {
 }
 
 export function addTask(event) {
+    function validateEvent(event) {
+        const category = event.target[0].value;
+        const title = event.target[1].value;
+
+        if (category.length < 2) {
+            window.alert("Category must be more than one character");
+        } else if (title.length < 6) {
+            alert("Title must be more than five characters");
+        }
+    }
+    validateEvent(event);
     event.preventDefault();
 
     const category = document.getElementById("category").value;
     const title = document.getElementById("title").value;
-
-    // const addTask = document.getElementById("add-task");
-    // addTask.addEventListener("click", createTask);
-    // console.log(addTask);
 
     async function createTask(category, title) {
         const allTask = document.getElementById("todo-list");
@@ -80,7 +78,6 @@ export function addTask(event) {
         let taskTitle = document.createElement("p");
         let taskSpacer = document.createElement("span");
         let taskDate = document.createElement("p");
-        // let taskDate = new Date();
 
         allTask.prepend(taskLi);
 

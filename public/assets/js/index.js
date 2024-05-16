@@ -21,6 +21,8 @@ const tasks = await getTask();
 tasks.todos.forEach((element) => {
     // console.log(element);
 });
+const infoContent = window.document.getElementById("info-content");
+infoContent.textContent = window.navigator.language;
 
 const favbutton = document.getElementById("button-container");
 function createFavButtons(icon) {

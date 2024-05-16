@@ -105,16 +105,49 @@ todo.js created an addTask() function that adds a new todo to the top of the tod
 
 ## Modify the style and/or CSS classes of an element in response to user interactions using the style or classList properties.
 
+todo.js created an addTask() function that adds a new todo, after submit is clicked the style of the form - myForm is set to "display = "none""
+
 ## Modify at least one attribute of an element in response to user interaction.
+
+todo.js when adding a task, the user creates a task with an anchor that uses "taskAnchor.setAttribute("href", "");"
 
 ## Register at least two different event listeners and create the associated event handler functions.
 
+index.js contains multiple eventlisteners as well as the functions that accompany those listeners.
+
+openBtn.addEventListener("click", () => {
+openForm();
+});
+closeBtn.addEventListener("click", () => {
+closeForm();
+});
+
+addTaskForm.addEventListener("submit", addTask);
+
+function openForm() {
+document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+document.getElementById("myForm").style.display = "none";
+}
+
+The addTask function is apart of the todo.js file
+
 ## Use at least two Browser Object Model (BOM) properties or methods.
+
+index.js containes multiple BOM properties window.document.getElementById to retrieve elements as well as window.navigator.language to display users language.
 
 ## Include at least one form and/or input with HTML attribute validation.
 
+index.html has a form to add a task that has the required attribute.
+
 ## Include at least one form and/or input with DOM event-based validation. (This can be the same form or input as the one above, but should include event-based validation in addition to the HTML attribute validation.)
 
+Added event based validation to todo.js addTask function. Category must contain more than one character and title must contain more than 5 characters.
+
 ## Ensure that the program runs without errors (comment out things that do not work, and explain your blockers - you can still receive partial credit).
+
+Everything has been checked to be running.
 
 </details>
