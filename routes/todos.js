@@ -1,14 +1,14 @@
-const express = require("express");
-const router = express.Router();
-const error = require("../utilities/error");
+import { todoList } from "../data/todos.js";
+import express from "express";
+import { error } from "../utilities/error.js";
 
-router.use(todoSome);
+export const router = express.Router();
+// router.use(todoSome);
 
 router.get("/", (req, res) => {
-    console.log(req.query.title);
-
-    res.send("Todo List");
+    res.send(todoList);
 });
+
 router.get("/new", (req, res) => {
     res.render("todos/new", { taskName: "Task Name" });
 });
@@ -57,4 +57,4 @@ function todoSome(req, res, next) {
     next();
 }
 
-module.exports = router;
+// module.exports = router;

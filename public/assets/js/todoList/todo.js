@@ -63,11 +63,6 @@ export async function filterTask(keyword) {
     populateTask(filteredTodos);
 }
 
-// searchInput.addEventListener("input", () => {
-//     const keyword = searchInput.value.trim();
-//     filterTask(keyword);
-// });
-
 export function addTask(event) {
     function validateEvent(event) {
         const category = event.target[0].value;

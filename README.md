@@ -12,7 +12,11 @@ server.js contains multiple middleware functions.
 
 ## Create and use error-handling middleware.
 
+added global error handling Middleware to server.js
+
 ## Use at least three different data categories (e.g., users, posts, or comments).
+
+there are three data categories in the data folder - calendar data that describes events on a particular date. Todo data that describes new, pending, or completed task. Users that describes the users within the community.
 
 ## Utilize reasonable data structuring practices.
 
@@ -48,7 +52,7 @@ todos.js contains a communication with an external API using AXIOS.
 
 ## Create user interaction with the API through a search feature, paginated gallery, or similar. This feature should use GET requests to retrieve associated data.
 
-\*\*\*Struggle with getting search feature working. Paused to retry later. Properly updated in console. Dom has frozen and not updating. Will conduct further research on solution.
+\*\*\*Struggle with getting search feature working. Paused to retry later. Properly updated in console. Dom has frozen and not updating. Will conduct further research on solution. Functions on todo.js
 
 ## Enable user manipulation of data within the API through the use of POST, PUT, or PATCH requests. Ensure your chosen API supports this feature before beginning.
 
