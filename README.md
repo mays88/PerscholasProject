@@ -1,4 +1,4 @@
-# Scaling Project - With each section implement new features or concepts that will benefit the end goal, SBA and eventually the capstone. This project will grow larger and more functional.
+# Scaling Project - With each section covered, I will implement new features or concepts that will benefit the end goal. Below are the SBAs and eventually the capstone. This project will grow larger and more functional.
 
 ## Figma Board
 
@@ -7,6 +7,8 @@ https://www.figma.com/design/gd9B2rFFnODgm3ugErgRHz/TBT?node-id=0-1&t=5jvdHxykKD
 <details><summary>SBA 318 - Express Server Application</summary>
 
 ## Create and use at least two pieces of custom middleware.
+
+server.js contains multiple middleware functions.
 
 ## Create and use error-handling middleware.
 
@@ -98,6 +100,8 @@ todo.js in the populateTask function there is a for loop with multiple elements 
 index.js contains cloneNode for fav buttons.
 
 ## Modify the HTML or text content of at least one element in response to user interaction using innerHTML, innerText, or textContent.
+
+todo.js created an addTask() function that adds a new todo to the top of the todo list.
 
 ## Modify the style and/or CSS classes of an element in response to user interactions using the style or classList properties.
 

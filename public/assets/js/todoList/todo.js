@@ -7,7 +7,7 @@ export async function getTask() {
 
         // postTitle.textContent = response.data.title;
         // postBody.textContent = response.data.body;
-
+        console.log(response.data);
         populateTask(response.data);
         // const result = response.data;
         // console.log(response.data);
@@ -18,8 +18,8 @@ export async function getTask() {
 }
 
 function populateTask(postId) {
-    let allTask = document.getElementById("todo-list");
-    let allPost = postId.todos;
+    const allTask = document.getElementById("todo-list");
+    const allPost = postId.todos;
 
     // console.log(allTask);
     for (let post in allPost) {
@@ -61,12 +61,66 @@ function populateTask(postId) {
     }
 }
 
-// export async function addTask() {
-//     const addTask = document.getElementById("add-task");
-//     addTask.addEventListener("click", createTask);
-//     console.log(addTask);
+export function addTask(event) {
+    event.preventDefault();
 
-//     function createTask() {
-//         console.log("POP UP FOR ADD TASK");
-//     }
-// }
+    const category = document.getElementById("category").value;
+    const title = document.getElementById("title").value;
+
+    // const addTask = document.getElementById("add-task");
+    // addTask.addEventListener("click", createTask);
+    // console.log(addTask);
+
+    async function createTask(category, title) {
+        const allTask = document.getElementById("todo-list");
+        let taskLi = document.createElement("li");
+        let taskAnchor = document.createElement("a");
+        let taskContainer = document.createElement("div");
+        let taskCat = document.createElement("p");
+        let taskTitle = document.createElement("p");
+        let taskSpacer = document.createElement("span");
+        let taskDate = document.createElement("p");
+        // let taskDate = new Date();
+
+        allTask.prepend(taskLi);
+
+        taskLi.appendChild(taskAnchor);
+        taskAnchor.appendChild(taskDate);
+        taskAnchor.appendChild(taskSpacer);
+        taskAnchor.appendChild(taskContainer);
+        taskContainer.appendChild(taskCat);
+        taskContainer.appendChild(taskTitle);
+
+        taskLi.classList.add("todo-task");
+        taskContainer.classList.add("todo-task-container");
+        taskDate.classList.add("todo-task-date");
+        taskSpacer.classList.add("todo-task-span");
+        taskCat.classList.add("todo-task-category");
+        taskTitle.classList.add("todo-task-title");
+        taskAnchor.classList.add("todo-task-anchor");
+
+        taskAnchor.setAttribute("href", "");
+
+        taskDate.textContent = "6:00 - 7:00";
+        taskSpacer.textContent = " | ";
+
+        const { data } = await axios.post(
+            "https://dummyjson.com/todos/add",
+            {
+                todo: title,
+                completed: false,
+                userId: 1,
+            },
+            {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            }
+        );
+        taskCat.textContent = category;
+        taskTitle.textContent = data.todo;
+    }
+
+    createTask(category, title);
+    document.getElementById("myForm").style.display = "none";
+}

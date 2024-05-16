@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const error = require("../utilities/error");
 
 router.use(todoSome);
 
@@ -12,13 +13,13 @@ router.get("/new", (req, res) => {
     res.render("todos/new", { taskName: "Task Name" });
 });
 
-router.post("/", (req, res) => {
-    const isValid = true;
+router.post("/", (req, res, next) => {
+    const isValid = false;
     if (isValid) {
         todos.push({ taskName: req.body.taskName });
         res.redirect(`/todos/${todos.length - 1}`);
     } else {
-        console.log("Error");
+        next(error(400, "Invalid Task"));
         res.render("users/new", { taskName: req.body.taskName });
     }
 });

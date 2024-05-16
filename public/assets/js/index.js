@@ -1,4 +1,4 @@
-import { getTask } from "./todoList/todo.js";
+import { getTask, addTask } from "./todoList/todo.js";
 import { getCalendar } from "./calendar/calendar.js";
 
 const todoTask = document.getElementById("todo-list");
@@ -61,6 +61,7 @@ function closeForm() {
 
 const openBtn = document.getElementById("openFormBtn");
 const closeBtn = document.getElementById("closeFormBtn");
+const addTaskForm = document.getElementById("form-body-container");
 
 openBtn.addEventListener("click", () => {
     openForm();
@@ -68,3 +69,5 @@ openBtn.addEventListener("click", () => {
 closeBtn.addEventListener("click", () => {
     closeForm();
 });
+
+addTaskForm.addEventListener("submit", addTask);
