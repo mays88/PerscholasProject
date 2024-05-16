@@ -48,9 +48,11 @@ todos.js contains a communication with an external API using AXIOS.
 
 ## Create user interaction with the API through a search feature, paginated gallery, or similar. This feature should use GET requests to retrieve associated data.
 
+\*\*\*Struggle with getting search feature working. Paused to retry later. Properly updated in console. Dom has frozen and not updating. Will conduct further research on solution.
+
 ## Enable user manipulation of data within the API through the use of POST, PUT, or PATCH requests. Ensure your chosen API supports this feature before beginning.
 
-(SKIP FOR NOW)
+todo.js there is a post request to add a todo to the top of the todo list.
 
 ## Make use of Promises and async/await syntax as appropriate.
 

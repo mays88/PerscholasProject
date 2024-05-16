@@ -2,20 +2,21 @@ export async function getTask() {
     try {
         const response = await axios.get(`https://dummyjson.com/todos`);
 
-        populateTask(response.data);
+        populateTask(response.data.todos);
 
-        return response.data;
+        return response.data.todos;
     } catch (error) {
         console.error(error);
     }
 }
 
-function populateTask(data) {
+function populateTask(todos) {
     const allTask = document.getElementById("todo-list");
-    const allPost = data.todos;
+    const allPost = todos;
 
     for (let post in allPost) {
         let reqPost = allPost[post];
+
         let taskLi = document.createElement("li");
         let taskAnchor = document.createElement("a");
         let taskContainer = document.createElement("div");
@@ -51,6 +52,21 @@ function populateTask(data) {
         taskTitle.textContent = todoTitle;
     }
 }
+
+export async function filterTask(keyword) {
+    const todos = await getTask();
+
+    const filteredTodos = todos.filter((todo) =>
+        todo.todo.toLowerCase().includes(keyword.toLowerCase())
+    );
+    console.log(filteredTodos);
+    populateTask(filteredTodos);
+}
+
+// searchInput.addEventListener("input", () => {
+//     const keyword = searchInput.value.trim();
+//     filterTask(keyword);
+// });
 
 export function addTask(event) {
     function validateEvent(event) {

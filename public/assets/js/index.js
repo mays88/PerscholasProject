@@ -1,13 +1,7 @@
-import { getTask, addTask } from "./todoList/todo.js";
+import { getTask, addTask, filterTask } from "./todoList/todo.js";
 import { getCalendar } from "./calendar/calendar.js";
 
 const todoTask = document.getElementById("todo-list");
-
-const todoItems = document.querySelectorAll("li.todo-task");
-
-for (let i = 0; i < todoItems.length; i++) {
-    // console.log(todoItems[i]);
-}
 
 document.getElementById("todo-list").style.color = "green";
 
@@ -16,11 +10,8 @@ todoTask.addEventListener("click", (e) => {
     console.log(e);
 });
 
-const tasks = await getTask();
+await getTask();
 
-tasks.todos.forEach((element) => {
-    // console.log(element);
-});
 const infoContent = window.document.getElementById("info-content");
 infoContent.textContent = window.navigator.language;
 
@@ -73,3 +64,8 @@ closeBtn.addEventListener("click", () => {
 });
 
 addTaskForm.addEventListener("submit", addTask);
+const searchInput = document.querySelector(".search-input");
+searchInput.addEventListener("input", () => {
+    const keyword = searchInput.value.trim();
+    filterTask(keyword);
+});
