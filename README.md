@@ -20,6 +20,8 @@ there are three data categories in the data folder - calendar data that describe
 
 ## Utilize reasonable data structuring practices.
 
+Created Error handling, separation of concerns, and have a consistent data model.
+
 ## Create GET routes for all data that should be exposed to the client.
 
 GET routes have been created for Todos, Users, and Calendar.
@@ -40,7 +42,11 @@ Inside of each of the Calendar, Todos, and Users route files. You will find the 
 
 ## Utilize route parameters, where appropriate.
 
+Each route has the proper route parameters to get, update, delete a single document.
+
 ## Adhere to the guiding principles of REST.
+
+I used the main HTTP methods, proper endpoints, uniform interface, not storing state anywhere.
 
 ## Create and render at least one view using a view template and template engine. This can be a custom template engine or a third-party engine. If you are stuck on how to approach this, think about ways you could render the current state of your API's data for easy viewing.
 
