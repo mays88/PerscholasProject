@@ -27,12 +27,54 @@ router.post("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-    console.log(req.params);
+    const id = parseInt(req.params.id);
+    const user = users.find((user) => user.id === id);
+
+    if (!user) {
+        return res.status(404).json({
+            status: "fail",
+            message: "Invalid ID",
+        });
+    }
+
     res.status(200).json({
         status: "Success",
-        // results: users.length,
-        // data: {
-        //     users,
-        // },
+        data: {
+            user,
+        },
+    });
+});
+
+router.patch("/:id", (req, res) => {
+    const id = parseInt(req.params.id);
+
+    if (id > users.length) {
+        return res.status(404).json({
+            status: "fail",
+            message: "Invalid ID",
+        });
+    }
+
+    res.status(200).json({
+        status: "Success",
+        data: {
+            user: req.body,
+        },
+    });
+});
+
+router.delete("/:id", (req, res) => {
+    const id = parseInt(req.params.id);
+
+    if (id > users.length) {
+        return res.status(404).json({
+            status: "fail",
+            message: "Invalid ID",
+        });
+    }
+
+    res.status(204).json({
+        status: "Success",
+        data: null,
     });
 });
