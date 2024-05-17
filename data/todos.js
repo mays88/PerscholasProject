@@ -1,4 +1,4 @@
-export const todoList = [
+export const todos = [
     {
         id: 1,
         todo: "Do something nice for someone I care about",

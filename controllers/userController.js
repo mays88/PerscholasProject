@@ -9,19 +9,6 @@ export const getUsers = (req, res) => {
     });
 };
 
-export const createUser = (req, res) => {
-    const newId = users[users.length - 1].id + 1;
-    const newUser = Object.assign({ id: newId }, req.body);
-    users.push(newUser);
-    console.log(users);
-    res.status(201).json({
-        status: "Success",
-        data: {
-            users: newUser,
-        },
-    });
-};
-
 export const getUser = (req, res) => {
     const id = parseInt(req.params.id);
     const user = users.find((user) => user.id === id);
@@ -37,6 +24,18 @@ export const getUser = (req, res) => {
         status: "Success",
         data: {
             user,
+        },
+    });
+};
+
+export const createUser = (req, res) => {
+    const newId = users[users.length - 1].id + 1;
+    const newUser = Object.assign({ id: newId }, req.body);
+    users.push(newUser);
+    res.status(201).json({
+        status: "Success",
+        data: {
+            user: newUser,
         },
     });
 };

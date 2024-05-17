@@ -10,14 +10,5 @@ import {
 
 export const router = express.Router();
 
-// router.get("/new", (req, res) => {
-//     res.render("todos/new", { taskName: "Task Name" });
-// });
-
 router.route("/").post(createTodo).get(getTodos);
 router.route("/:id").get(getTodo).patch(updateTodo).delete(deleteTodo);
-
-// router.param("id", (req, res, next, id) => {
-//     req.todo = todos[id];
-//     next();
-// });

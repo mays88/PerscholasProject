@@ -1,22 +1,76 @@
-import { todoList } from "../data/todos.js";
+import { todos } from "../data/todos.js";
 
 export const getTodos = (req, res) => {
-    res.send(todoList);
+    res.status(200).json({
+        status: "Success",
+        results: todos.length,
+        data: {
+            todos,
+        },
+    });
 };
 
 export const getTodo = (req, res) => {
-    res.send(`Get Todo With ID of ${req.params.id}`);
-};
+    const id = parseInt(req.params.id);
+    const todo = todos.find((todo) => todo.id === id);
 
-export const updateTodo = (req, res) => {
-    res.send(`Update Todo With ID of ${req.params.id}`);
-};
+    if (!todo) {
+        return res.status(404).json({
+            status: "fail",
+            message: "Invalid ID",
+        });
+    }
 
-export const deleteTodo = (req, res) => {
-    req.params.id;
-    res.send(`Delete Todo With ID of ${req.params.id}`);
+    res.status(200).json({
+        status: "Success",
+        data: {
+            todo,
+        },
+    });
 };
 
 export const createTodo = (req, res) => {
-    res.send(`Create Todo With ID of ${req.params.id}`);
+    const newId = todos[todos.length - 1].id + 1;
+    const newTodo = Object.assign({ id: newId }, req.body);
+    todos.push(newTodo);
+    res.status(201).json({
+        status: "Success",
+        data: {
+            todo: newTodo,
+        },
+    });
+};
+
+export const updateTodo = (req, res) => {
+    const id = parseInt(req.params.id);
+
+    if (id > todos.length) {
+        return res.status(404).json({
+            status: "fail",
+            message: "Invalid ID",
+        });
+    }
+
+    res.status(200).json({
+        status: "Success",
+        data: {
+            todo: req.body,
+        },
+    });
+};
+
+export const deleteTodo = (req, res) => {
+    const id = parseInt(req.params.id);
+
+    if (id > todos.length) {
+        return res.status(404).json({
+            status: "fail",
+            message: "Invalid ID",
+        });
+    }
+
+    res.status(204).json({
+        status: "Success",
+        data: null,
+    });
 };
