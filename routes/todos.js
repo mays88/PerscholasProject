@@ -3,7 +3,7 @@ import express from "express";
 import { error } from "../utilities/error.js";
 
 export const router = express.Router();
-// router.use(todoSome);
+router.use(todoSome);
 
 router.get("/", (req, res) => {
     res.send(todoList);

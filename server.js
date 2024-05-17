@@ -4,6 +4,7 @@ import { router as calendarRouter } from "./routes/calendar.js";
 import { router as userRouter } from "./routes/users.js";
 
 const app = express();
+const port = 4000;
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
@@ -11,13 +12,15 @@ app.use(express.json());
 
 app.set("view engine", "ejs");
 
-app.use("/todos", todoRouter);
-app.use("/calendar", calendarRouter);
-app.use("/users", userRouter);
+app.use("/api/v1/todos", todoRouter);
+app.use("/api/v1/calendar", calendarRouter);
+app.use("/api/v1/users", userRouter);
 
 // Global Error Handler Middleware
 app.use((err, req, res, next) => {
     res.status(500).send("Server Error!");
 });
 
-app.listen(3000);
+app.listen(port, () => {
+    console.log(`Server running on port: ${port}`);
+});

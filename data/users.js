@@ -1,4 +1,4 @@
-const users = [
+export let users = [
     {
         id: 1,
         name: "Anthony",
@@ -30,5 +30,3 @@ const users = [
         email: "TeoMarcelo@example.com",
     },
 ];
-
-module.exports = users;
