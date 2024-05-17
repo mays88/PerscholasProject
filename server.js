@@ -1,10 +1,13 @@
 import express from "express";
+import morgan from "morgan";
 import { router as todoRouter } from "./routes/todos.js";
 import { router as calendarRouter } from "./routes/calendar.js";
 import { router as userRouter } from "./routes/users.js";
 
 const app = express();
 const port = 4000;
+
+app.use(morgan("dev"));
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));

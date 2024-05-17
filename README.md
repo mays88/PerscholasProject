@@ -22,11 +22,19 @@ there are three data categories in the data folder - calendar data that describe
 
 ## Create GET routes for all data that should be exposed to the client.
 
+GET routes have been created for Todos, Users, and Calendar.
+
 ## Create POST routes for data, as appropriate. At least one data category should allow for client creation via a POST request.
+
+Inside of each of the Calendar, Todos, and Users route files. You will find the POST method and inside the Controller files are the functions for each POST request.
 
 ## Create PATCH or PUT routes for data, as appropriate. At least one data category should allow for client manipulation via a PATCH or PUT request.
 
+Inside of each of the Calendar, Todos, and Users route files. You will find the PATCH method and inside the Controller files are the functions for each PATCH request.
+
 ## Create DELETE routes for data, as appropriate. At least one data category should allow for client deletion via a DELETE request.
+
+Inside of each of the Calendar, Todos, and Users route files. You will find the DELETE method and inside the Controller files are the functions for each DELETE request.
 
 ## Include query parameters for data filtering, where appropriate. At least one data category should allow for additional filtering through the use of query parameters. Note: DO NOT use API keys; this makes it more difficult for instructors to grade finished projects efficiently.
 
@@ -36,11 +44,15 @@ there are three data categories in the data folder - calendar data that describe
 
 ## Create and render at least one view using a view template and template engine. This can be a custom template engine or a third-party engine. If you are stuck on how to approach this, think about ways you could render the current state of your API's data for easy viewing.
 
+Used the ejs view engine to render a form with text input field and a submit button
+
 ## Use simple CSS to style the rendered views. Note: This is not a test of design; it is a test of serving static files using Express. The CSS can be very simple.
 
 ## Include a form within a rendered view that allows for interaction with your RESTful API.
 
 ## Utilize reasonable code organization practices.
+
+Refactored code for separation of concerns.
 
 </details>
 

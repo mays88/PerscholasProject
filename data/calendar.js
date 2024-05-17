@@ -1,4 +1,4 @@
-const calendar = [
+export const calendar = [
     {
         title: "Perscholas Graduation",
         date: "2024-06-21",
@@ -16,5 +16,3 @@ const calendar = [
         description: "Ski vacation with family",
     },
 ];
-
-module.exports = calendar;
