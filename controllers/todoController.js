@@ -1,11 +1,27 @@
 import { todos } from "../data/todos.js";
 
 export const getTodos = (req, res) => {
+    let filteredTodos = todos;
+
+    if (req.query.completed) {
+        const isCompleted = req.query.completed === "true";
+        filteredTodos = filteredTodos.filter(
+            (todo) => todo.completed === isCompleted
+        );
+    }
+
+    if (req.query.category) {
+        const category = req.query.category;
+        filteredTodos = filteredTodos.filter(
+            (todo) => todo.category === category
+        );
+    }
+
     res.status(200).json({
         status: "Success",
         results: todos.length,
         data: {
-            todos,
+            todos: filteredTodos,
         },
     });
 };

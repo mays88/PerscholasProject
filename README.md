@@ -40,6 +40,10 @@ Inside of each of the Calendar, Todos, and Users route files. You will find the 
 
 ## Include query parameters for data filtering, where appropriate. At least one data category should allow for additional filtering through the use of query parameters. Note: DO NOT use API keys; this makes it more difficult for instructors to grade finished projects efficiently.
 
+Todo parameters - completed = boolean, category
+Calendar parameters - date, title
+Users parameters - email, username
+
 ## Utilize route parameters, where appropriate.
 
 Each route has the proper route parameters to get, update, delete a single document.

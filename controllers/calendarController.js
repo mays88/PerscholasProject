@@ -1,10 +1,24 @@
 import { events } from "../data/calendar.js";
 export const getEvents = (req, res) => {
+    let filteredEvents = events;
+
+    if (req.query.title) {
+        const title = req.query.title;
+        filteredEvents = filteredEvents.filter(
+            (event) => event.title === title
+        );
+    }
+
+    if (req.query.date) {
+        const date = req.query.date;
+        filteredEvents = filteredEvents.filter((event) => event.date === date);
+    }
+
     res.status(200).json({
         status: "Success",
         results: events.length,
         data: {
-            events,
+            events: filteredEvents,
         },
     });
 };

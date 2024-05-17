@@ -1,10 +1,24 @@
 import { users } from "../data/users.js";
 export const getUsers = (req, res) => {
+    let filteredUsers = users;
+
+    if (req.query.email) {
+        const email = req.query.email;
+        filteredUsers = filteredUsers.filter((user) => user.email === email);
+    }
+
+    if (req.query.username) {
+        const username = req.query.username;
+        filteredUsers = filteredUsers.filter(
+            (user) => user.username === username
+        );
+    }
+
     res.status(200).json({
         status: "Success",
         results: users.length,
         data: {
-            users,
+            users: filteredUsers,
         },
     });
 };

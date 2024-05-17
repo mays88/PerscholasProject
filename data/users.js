@@ -1,32 +1,32 @@
 export let users = [
     {
         id: 1,
-        name: "Anthony",
-        username: "Mays88",
+        name: "anthony",
+        username: "mays88",
         email: "mays88@example.com",
     },
     {
         id: 2,
-        name: "Abraham",
-        username: "Abe",
+        name: "abraham",
+        username: "abe",
         email: "abe@example.com",
     },
     {
         id: 3,
-        name: "Colton",
-        username: "CWright",
+        name: "colton",
+        username: "cwright",
         email: "c_wright@example.com",
     },
     {
         id: 4,
-        name: "Jose",
-        username: "PDJurado",
+        name: "jose",
+        username: "pdjurado",
         email: "pdjurado@example.com",
     },
     {
         id: 5,
-        name: "Teo",
-        username: "Marcelo_T",
-        email: "TeoMarcelo@example.com",
+        name: "teo",
+        username: "marcelo_T",
+        email: "teomarcelo@example.com",
     },
 ];
