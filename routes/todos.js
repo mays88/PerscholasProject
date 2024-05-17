@@ -10,23 +10,14 @@ import {
 
 export const router = express.Router();
 
-router.use(todoSome);
-
-router.get("/new", (req, res) => {
-    res.render("todos/new", { taskName: "Task Name" });
-});
+// router.get("/new", (req, res) => {
+//     res.render("todos/new", { taskName: "Task Name" });
+// });
 
 router.route("/").post(createTodo).get(getTodos);
-router.route("/:id").get(getTodo).put(updateTodo).delete(deleteTodo);
+router.route("/:id").get(getTodo).patch(updateTodo).delete(deleteTodo);
 
-router.param("id", (req, res, next, id) => {
-    req.todo = todos[id];
-    next();
-});
-
-function todoSome(req, res, next) {
-    console.log(
-        `Using this middleware in express in the direct todo route file. We are currently on route ${req.originalUrl}.`
-    );
-    next();
-}
+// router.param("id", (req, res, next, id) => {
+//     req.todo = todos[id];
+//     next();
+// });

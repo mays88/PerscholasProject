@@ -5,7 +5,6 @@ export const getTodos = (req, res) => {
 };
 
 export const getTodo = (req, res) => {
-    console.log(req.todo);
     res.send(`Get Todo With ID of ${req.params.id}`);
 };
 
@@ -18,13 +17,6 @@ export const deleteTodo = (req, res) => {
     res.send(`Delete Todo With ID of ${req.params.id}`);
 };
 
-export const createTodo = (req, res, next) => {
-    const isValid = false;
-    if (isValid) {
-        todos.push({ taskName: req.body.taskName });
-        res.redirect(`/todos/${todos.length - 1}`);
-    } else {
-        next(error(400, "Invalid Task"));
-        res.render("users/new", { taskName: req.body.taskName });
-    }
+export const createTodo = (req, res) => {
+    res.send(`Create Todo With ID of ${req.params.id}`);
 };
