@@ -46,7 +46,7 @@ function populateTask(todos) {
 
         taskAnchor.setAttribute("href", "");
 
-        taskDate.textContent = "6:00 - 7:00";
+        taskDate.textContent = "10 Sept";
         taskCat.textContent = "Finance";
         taskSpacer.textContent = " | ";
         taskTitle.textContent = todoTitle;
@@ -109,7 +109,7 @@ export function addTask(event) {
 
         taskAnchor.setAttribute("href", "");
 
-        taskDate.textContent = "6:00 - 7:00";
+        taskDate.textContent = "10 Sept";
         taskSpacer.textContent = " | ";
 
         const { data } = await axios.post(
