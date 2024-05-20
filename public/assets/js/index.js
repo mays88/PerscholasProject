@@ -22,19 +22,22 @@ function createFavButtons(icon) {
 
     const iconElement = clone.querySelector("i");
 
-    iconElement.setAttribute("class", icon);
+    iconElement.setAttribute(
+        "class",
+        `fa-solid ${icon} fa-2xl fav-button-icons`
+    );
 
     return clone;
 }
 
 (() => {
     const favIcons = [
-        { icon: "fa-solid fa-list" },
-        { icon: "fa-solid fa-coins" },
-        { icon: "fa-solid fa-dumbbell" },
-        { icon: "fa-solid fa-stopwatch" },
-        { icon: "fa-solid fa-drumstick-bite" },
-        { icon: "fa-solid fa-music" },
+        { icon: "fa-list" },
+        { icon: "fa-coins" },
+        { icon: "fa-dumbbell" },
+        { icon: "fa-stopwatch" },
+        { icon: "fa-drumstick-bite" },
+        { icon: "fa-music" },
     ];
 
     favIcons.forEach((icon) => {
